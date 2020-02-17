@@ -1,0 +1,55 @@
+{
+  "name": "pisqpagapi",
+  "version": "1.0.0",
+  "description": "PisqPag API",
+  "main": "src/index.js",
+  "scripts": {
+    "debug": "cross-env NODE_ENV=development nodemon --exec ts-node-dev --respawn --transpileOnly --expose-gc --inspect=9222 src/index.ts ",
+    "start": "cross-env NODE_ENV=development ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "prod": "pm2 start ecosystem.config.js --env production",
+    "test": "jest",
+    "lint": "eslint --fix \"src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://biopag@dev.azure.com/biopag/biopag/_git/biopagAPI"
+  },
+  "author": "Dream Team",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.2",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql-import": "^1.0.0-beta.2",
+    "graphql-playground-middleware-express": "^1.7.12",
+    "graphql-tools": "^4.0.6",
+    "graphql-type-json": "^0.3.1",
+    "helmet": "^3.21.2",
+    "http-status-codes": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash-fp": "^0.10.4",
+    "module-alias": "^2.2.2",
+    "mongoose": "^5.8.11",
+    "moxios": "^0.4.0",
+    "pipeawait": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^8.8.2",
+    "sinon": "^8.1.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.5"
+  },
+  "_moduleAliases": {
+    "@modules": "dist/modules",
+    "@shared": "dist/shared"
+  }
+}

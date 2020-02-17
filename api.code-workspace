@@ -1,0 +1,32 @@
+{
+  "folders": [{
+    "path": "."
+  }],
+  "settings": {
+    "eslint.validate": ["javascript", "typescript"],
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true,
+    "javascript.format.enable": false,
+    "javascript.format.insertSpaceAfterCommaDelimiter": false,
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
+    "editor.tabSize": 2,
+    "typescript.format.enable": false,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+type Query {
+  users(id: Int, isActive: Boolean): [User]
+}
+
+type Mutation {
+  sayHello(name: String): String
+}
+
+type User {
+  id: Int
+  firstName: String
+  lastName: String
+  email: String
+}
