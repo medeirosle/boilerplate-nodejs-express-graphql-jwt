@@ -1,7 +1,7 @@
 {
-  "name": "pisqpagapi",
+  "name": "api",
   "version": "1.0.0",
-  "description": "PisqPag API",
+  "description": "API",
   "main": "src/index.js",
   "scripts": {
     "debug": "cross-env NODE_ENV=development nodemon --exec ts-node-dev --respawn --transpileOnly --expose-gc --inspect=9222 src/index.ts ",
@@ -13,9 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://biopag@dev.azure.com/biopag/biopag/_git/biopagAPI"
+    "url": "<Project URL>"
   },
-  "author": "Dream Team",
+  "author": "Leandro Medeiros (https://github.com/neomedeiros)",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.2",
