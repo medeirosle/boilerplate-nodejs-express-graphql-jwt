@@ -4,8 +4,8 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import expressPlayground from 'graphql-playground-middleware-express'
 
-import errorHandler from './shared/middleware/error.middleware'
-import notFoundHandler from './shared/middleware/notfound.middleware'
+import errorHandler from '@shared/middleware/error.middleware'
+import notFoundHandler from '@shared/middleware/notfound.middleware'
 
 import registerModuleRoutes from './routes'
 

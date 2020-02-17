@@ -1,5 +1,5 @@
-import User from './types/user'
-import { getUsers, sayHello } from './services/user.service'
+import User from '@modules/users/types/user'
+import { getUsers, sayHello } from '@modules/users/services/user.service'
 
 const resolvers = {
   async users(data, context): Promise<Array<User>> {

@@ -1,5 +1,5 @@
 import * as HttpStatus from 'http-status-codes'
-import constants from '../constants/errors.constants'
+import constants from '@shared/constants/errors.constants'
 
 const notFoundHandler = (req, res) => {
   res.status(HttpStatus.NOT_FOUND).json({

@@ -1,3 +1,3 @@
-import routes from './routes'
+import routes from '@modules/users/routes'
 
 export { routes }

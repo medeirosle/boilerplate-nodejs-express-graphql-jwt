@@ -1,4 +1,4 @@
-import User from '../types/user'
+import User from '@modules/users/types/user'
 
 const getUsers = async function(): Promise<User[]> {
   return [
