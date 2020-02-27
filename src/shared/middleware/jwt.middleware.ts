@@ -1,8 +1,9 @@
+import Express from 'express'
 import { last, split, pipe } from 'lodash/fp'
 import jwt from 'jsonwebtoken'
 import HttpStatus from 'http-status-codes'
 
-const authGuard = (req, res, next) => {
+const authGuard = (req: any, res: any, next: Function): void => {
   try {
     const token = req.headers.authorization
 

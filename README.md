@@ -10,7 +10,6 @@ A Backend boilerplate to build a Node.js API, using:
 - Cors
 - JWT Auth
 - HMAC Guard
-- Replay Guard
 - Lodash/FP
 - Nodemon
 - Module-Alias

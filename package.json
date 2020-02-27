@@ -4,7 +4,7 @@
   "description": "API",
   "main": "src/index.js",
   "scripts": {
-    "debug": "cross-env NODE_ENV=development nodemon --exec ts-node-dev --respawn --transpileOnly --expose-gc --inspect=9222 src/index.ts ",
+    "debug": "cross-env NODE_ENV=development nodemon --exec ts-node-dev --respawn --expose-gc --inspect=9222 src/index.ts ",
     "start": "cross-env NODE_ENV=development ts-node-dev --respawn src/index.ts",
     "build": "tsc",
     "prod": "pm2 start ecosystem.config.js --env production",
@@ -50,7 +50,7 @@
     "typescript": "^3.7.5"
   },
   "_moduleAliases": {
-    "@modules": "dist/modules",
-    "@shared": "dist/shared"
+    "@modules": "src/modules",
+    "@shared": "src/shared"
   }
 }

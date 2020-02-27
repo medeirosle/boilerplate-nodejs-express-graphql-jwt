@@ -19,28 +19,22 @@ function validateHMACAuthentication(
   const hmac = get('headers.digest', req)
   const { body } = req
 
-  if (!ensureHMACExists(hmac, next)) return
-  if (!ensureHMACIsValid(body, hmac, next)) return
+  ensureHMACExists(hmac, next)
+  ensureHMACIsValid(body, hmac, next)
 
   next()
 }
 
-function ensureHMACExists(hmac: string, next: Function): boolean {
+function ensureHMACExists(hmac: string, next: Function): void {
   if (isEmpty(hmac)) {
-    next(new Error(errors.HMAC_EMPTY_MESSAGE))
-
-    return false
+    return next(new Error(errors.HMAC_EMPTY_MESSAGE))
   }
-
-  return true
 }
 
-function ensureHMACIsValid(body: any, hmac: string, next: Function): boolean {
+function ensureHMACIsValid(body: any, hmac: string, next: Function): void {
   if (generateHash(getURLEncodedBody(body)) !== hmac) {
     next(new Error(errors.HMAC_INVALID_MESSAGE))
-    return false
   }
-  return true
 }
 
 function getURLEncodedBody(body: any): string {
