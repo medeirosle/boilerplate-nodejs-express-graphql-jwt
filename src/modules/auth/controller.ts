@@ -1,9 +1,17 @@
-import { authenticate } from '@modules/auth/services/auth.service'
+import { makeExecutableSchema } from 'graphql-tools'
+import resolvers from './resolvers'
+import graphqlExpress from 'express-graphql'
 
-const authenticateUser = function(req, res, next) {
-  const { username, password } = req.body
+async function createController(req: any, res: any) {
+  const schemaStatic = await require('graphql-import').importSchema(
+    'src/modules/auth/schema.graphql'
+  )
 
-  res.send(authenticate(username, password))
+  return {
+    schema: makeExecutableSchema({ typeDefs: schemaStatic }),
+    context: { req, res },
+    rootValue: resolvers
+  }
 }
 
-export { authenticateUser }
+export default graphqlExpress(createController)

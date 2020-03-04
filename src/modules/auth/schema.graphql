@@ -1,0 +1,11 @@
+type Query {
+  dummy: String
+}
+
+type Mutation {
+  authenticate(username: String, password: String): Auth
+}
+
+type Auth {
+  token: String
+}
