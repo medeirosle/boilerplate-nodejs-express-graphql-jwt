@@ -2,11 +2,15 @@ import User from '@modules/users/types/user'
 import { getUsers, sayHello } from '@modules/users/services/user.service'
 
 const resolvers = {
-  async users(data, context): Promise<Array<User>> {
-    return await getUsers()
+  Query: {
+    async getUsers(data, context): Promise<Array<User>> {
+      return await getUsers()
+    }
   },
-  async sayHello({ name }) {
-    return await sayHello(name)
+  Mutation: {
+    async sayHello(data, context) {
+      return await sayHello(data)
+    }
   }
 }
 

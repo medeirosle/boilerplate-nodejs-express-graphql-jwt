@@ -17,7 +17,7 @@ const getUsers = async function(): Promise<User[]> {
   ]
 }
 
-const sayHello = async function(name): Promise<string> {
+const sayHello = async function({ name }): Promise<string> {
   return `Hello ${name}`
 }
 

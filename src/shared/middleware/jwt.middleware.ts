@@ -1,7 +1,7 @@
-import Express from 'express'
 import { last, split, pipe } from 'lodash/fp'
 import jwt from 'jsonwebtoken'
 import HttpStatus from 'http-status-codes'
+import errors from '@shared/constants/errors.constants'
 
 const authGuard = (req: any, res: any, next: Function): void => {
   try {
@@ -9,17 +9,15 @@ const authGuard = (req: any, res: any, next: Function): void => {
 
     if (!token) {
       res.statusCode = HttpStatus.UNAUTHORIZED
-      return next()
+      throw new Error(errors.JWT_INVALID_MESSAGE)
     }
 
     const jwtPayload = verifyToken(token)
 
     req.user = jwtPayload
-    return next()
   } catch (error) {
     res.statusCode = HttpStatus.UNAUTHORIZED
-    res.send(error)
-    return next()
+    throw error
   }
 }
 
