@@ -1,5 +1,5 @@
 type Query {
-  users(id: Int, isActive: Boolean): [User]
+  getUsers(id: Int, isActive: Boolean): [User]
 }
 
 type Mutation {
